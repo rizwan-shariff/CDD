@@ -1,0 +1,4 @@
+Branching and Merging Notes
+Author: Rizwan Shariff S M
+Feature branches: feature-login, feature-signup
+Version 1.0

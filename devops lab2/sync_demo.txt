@@ -1,0 +1,4 @@
+DevOps Lab 2: Repository Synchronization (Push, Fetch, Pull)
+Author: Rizwan Shariff S M
+USN: 4NI25CS163
+Remote URL: https://github.com/rizwan-shariff/CDD.git

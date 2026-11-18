@@ -1,0 +1,3 @@
+a file for a merge conflict
+second commit made on the feature branch by rizwan-shariff
+this is a new commit from new branch successfully merged
