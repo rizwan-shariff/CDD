@@ -8,56 +8,80 @@ Department of Computer Science and Engineering, NIE Mysuru
 
 ## Overview
 
-The final CDD experiment looks at the design side of collaborative work. Two
-Figma files were built to practise frames, reusable components, layer grouping
-and clickable prototype flows.
+The last CDD experiment moves from code to design. Two Figma files were built to
+practise frames, reusable elements, layer grouping and clickable prototype flows.
 
-## Prototype 1 — YouScream
+## Prototype 1 — Lab website (shoe brand)
 
-YouScream is a four-screen desktop concept for a dessert brand. Each screen uses
-a different colour direction while keeping the same layout, so the set reads as
-one product rather than four unrelated designs.
+A four-screen desktop concept for a shoe brand. Every screen keeps the same
+composition: a curved colour block in the top-left corner, a field of small
+line-art shoe illustrations, four oval photo masks along the bottom and one large
+featured shoe photograph in an oval on the right.
 
-The file includes:
+Only the palette changes between screens, so the set reads as one product rather
+than four unrelated designs.
 
-- four desktop frames (`Desktop - 1` to `Desktop - 4`, 1440 × 1024)
-- gradient backgrounds and a vector drizzle shape
-- repeated doughnut icons used as decorative elements
-- a shared dessert image and grouped layer structure
-- prototype links connecting the four screens into one flow
+| Frame | Colour direction |
+|---|---|
+| `MacBook Pro 16" - 1` | Green / lime |
+| `MacBook Pro 16" - 2` | Rose / crimson |
+| `MacBook Pro 16" - 3` | Amber / sand |
+| `MacBook Pro 16" - 4` | White / deep red |
 
-## Prototype 2 — F1_PAGE
+The file lives in the **Team folder** (Free plan) with two pages. Page 1 holds the
+four frames side by side; Page 2 is left for scratch work. The four frames are
+wired together in the Prototype tab as **Flow 1**.
 
-F1_PAGE is a fourteen-screen motorsport portal. The frames cover the driver
-line-up, individual driver pages and the supporting detail screens, all joined
-into a single navigation flow.
+### Screens
 
-## Design boards
+![Lab website — green theme](lab_site_theme_green.png)
 
-### YouScream — multi-screen canvas
+![Lab website — rose theme](lab_site_theme_rose.png)
 
-![YouScream canvas](youscream_multi_screen_canvas.png)
+![Lab website — amber theme](lab_site_theme_amber.png)
 
-### YouScream — prototype flow
+![Lab website — crimson theme](lab_site_theme_crimson.png)
 
-![YouScream prototype flow](youscream_prototype_flow_architecture.png)
+### Prototype
 
-### YouScream — components and transformations
+![Lab website prototype flow](lab_site_prototype_flow.png)
 
-![YouScream components](youscream_components_and_transformations.png)
+## Prototype 2 — F1 Student Website
 
-### YouScream — landing screen with vector drizzle
+A four-screen motorsport portal built in **Drafts**. The screens share a fixed
+header (`Home · Mercedes · Red Bull · McLaren`), a headline with a coloured rule,
+three facts and a `NEXT →` control, so the visitor always knows where they are.
 
-![YouScream landing screen](youscream_landing_screen_vector_drizzle.png)
+| Screen | Headline | Facts shown |
+|---|---|---|
+| Home | Formula 1 | top speed, pit-stop time, number of teams |
+| Mercedes | The Silver Arrows | base in Brackley, 8 titles in a row, silver livery |
+| Red Bull | Racing with wings | base in Milton Keynes, 4 titles in a row, drinks company origin |
+| McLaren | Papaya power | founded 1963, base in Woking, papaya orange |
 
-### F1_PAGE — fourteen-screen flow
+The prototype is published as the flow **F1 Website**, moving Home → Mercedes →
+Red Bull → McLaren and back to the start.
 
-![F1_PAGE prototype](f1_page_14_screen_interactive_flow.png)
+### Screens
+
+![F1 home](f1_home_formula_1.png)
+
+![F1 Mercedes](f1_mercedes.png)
+
+![F1 Red Bull](f1_red_bull.png)
+
+![F1 McLaren](f1_mclaren.png)
+
+### Prototype
+
+![F1 prototype flow](f1_prototype_flow.png)
 
 ## What I practised
 
 - building frames and arranging them on a shared page
-- reusing visual elements instead of redrawing them
-- keeping layers and groups readable
-- connecting screens in the Prototype tab
+- reusing one visual element (the shoe illustration, the header bar) instead of
+  redrawing it on every screen
+- keeping layers and groups readable in the Layers panel
+- choosing a palette per screen while keeping the layout identical
+- connecting screens in the Prototype tab and checking the flow end to end
 - treating a design file as a shared reference for a team
