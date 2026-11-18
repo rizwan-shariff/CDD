@@ -80,9 +80,11 @@ unit tests pass.
 The final experiment moves from code to design. `figma/` contains the exported
 boards for two prototypes:
 
-- **YouScream** — four desktop screens with different colour themes, shared
-  components and a clickable flow.
-- **F1_PAGE** — a fourteen-screen motorsport portal connected as one prototype.
+- **Lab website** — a four-screen desktop concept for a shoe brand. Every frame
+  keeps the same layout and only the palette changes, and the frames are joined
+  as one prototype flow.
+- **F1 Student Website** — four team screens (Formula 1, Mercedes, Red Bull,
+  McLaren) linked into a single clickable flow.
 
 More detail, including the individual design boards, is in
 [`figma/README.md`](figma/README.md).
