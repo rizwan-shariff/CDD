@@ -1,0 +1,16 @@
+services:
+  web:
+    image: nginx:latest
+    container_name: compose-web
+    ports:
+      - "8082:80"
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+    restart: unless-stopped
+
+  tool:
+    image: docker:latest
+    container_name: compose-tool
+    ports:
+      - "8083:80"
+    restart: unless-stopped

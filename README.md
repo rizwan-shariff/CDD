@@ -30,7 +30,12 @@ repository can be read in order or opened at the experiment that interests you.
 | 5 | Team collaboration | Shared repository, pull request flow, branch hygiene | `devops lab5/`, `login.txt` |
 | 6 | CI with GitHub Actions | YAML workflow that runs a Python program on every push | `hello.py`, `ci.yml` |
 | 7 | Automated build and test | Calculator module and unittest suite executed by CI | `calculator.py`, `test_calculator.py`, `build-test.yml` |
-| 8 | UI/UX prototyping | Figma frames, components and clickable prototype flows | `figma/` |
+| 8 | Docker images and containers | Pull `nginx`, run a detached container, publish a port | `docker/exp8-nginx/` |
+| 9 | Dockerfiles and custom images | Build a tagged image that serves a custom page | `docker/exp9-custom-image/` |
+| 10 | Docker Compose | Two-container stack started with one command | `docker/exp10-compose/` |
+| 11 | Containerised Python application | Run `calculator.py` inside `python:3.12-slim` | `docker/exp11-python-app/` |
+| 12 | Personas and wireframes | Personas, a user journey and low-fidelity wireframes | `figma/` |
+| 13 | High-fidelity prototypes | Figma frames, components and clickable prototype flows | `figma/` |
 
 ## Repository layout
 
@@ -41,6 +46,7 @@ CDD/
 │   └── build-test.yml          # Calculator build and unit tests
 ├── conflict_class/             # merge-conflict exercise
 ├── devops lab1/ ... lab5/      # experiment artefacts
+├── docker/                     # experiments 8-11: nginx, Dockerfile, Compose, Python
 ├── figma/                      # UI/UX prototypes and design boards
 ├── calculator.py
 ├── test_calculator.py
@@ -74,6 +80,44 @@ python -m unittest -v test_calculator.py
 
 Expected result: the calculator prints four arithmetic results, and all five
 unit tests pass.
+
+## Docker
+
+Experiments 8 to 11 package the work in containers. The `docker/` folder holds
+one folder per experiment, and every command is run from the repository root in
+Git Bash with the Docker Engine running.
+
+| Experiment | Folder | Image | Host port |
+|---|---|---|---|
+| 8 - images and containers | `docker/exp8-nginx/` | `nginx:latest` | 8080 |
+| 9 - custom image from a Dockerfile | `docker/exp9-custom-image/` | `cdd-custom-nginx:1.0` | 8081 |
+| 10 - Compose stack | `docker/exp10-compose/` | `nginx:latest` + `docker:latest` | 8082, 8083 |
+| 11 - Python application | `docker/exp11-python-app/` | `cdd-calculator:1.0` | none |
+
+The first experiment pulls the official `nginx` image and runs it as a detached
+container named `nginx-lab`. The second adds a `Dockerfile` that copies a custom
+page over the default nginx page and builds it as `cdd-custom-nginx:1.0`. The
+third describes the web container and a second container from the `docker` image
+in one Compose file, so the whole stack starts with a single command. The fourth
+copies `calculator.py` into `python:3.12-slim` and runs it, which shows that the
+interpreter travels inside the image.
+
+```bash
+docker pull nginx
+docker run -d --name nginx-lab -p 8080:80 nginx
+
+docker build -t cdd-custom-nginx:1.0 docker/exp9-custom-image
+docker run -d --name custom-web -p 8081:80 cdd-custom-nginx:1.0
+
+docker compose -f docker/exp10-compose/docker-compose.yml up -d
+docker compose -f docker/exp10-compose/docker-compose.yml ps
+
+docker build -t cdd-calculator:1.0 docker/exp11-python-app
+docker run --rm cdd-calculator:1.0
+```
+
+More detail, including the Dockerfiles and the full command list, is in
+[`docker/README.md`](docker/README.md).
 
 ## Figma prototypes
 
